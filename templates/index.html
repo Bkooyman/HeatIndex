@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Heat Index Decision Matrix</title>
+    <link rel="icon" href="{{ url_for('static', filename='favicon.svg')}}" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0"
+    />
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='site.css')}}" />
+  </head>
+  <body>
+    <!------------------------------------------------------------------------------------- 
+      Navbar
+      --------------------------------------------------------------------------------------->
+    <header>
+      <nav class="navbar navbar-dark shadow-sm">
+        <div class="container d-flex align-items-center justify-content-start gap-2">
+          <a href="https://umd.edu/">
+            <img src="{{url_for('static', filename='umd_logo.png')}}" height="60" class="me-2"
+          /></a>
+          <!-- <button class="btn btn-sm btn-dark" type="button" data-bs-toggle="collapse" data-bs-target="#menu">
+            <span class="material-symbols-outlined"> menu </span>
+          </button> -->
+          <a class="navbar-brand ml-4" href="#">Heat Index Decision Matrix</a>
+        </div>
+      </nav>
+    </header>
+    <div class="flex-container flex-shrink-0 flex-grow-1">
+      <div class="flex-row d-flex flex-grow-1 container">
+        <!------------------------------------------------------------------------------------- 
+            Side menu
+          -------------------------------------------------------------------------------------->
+        <div id="menu" class="col-auto collapse show collapse-horizontal collapse-trans p-3 text-light bg-dark">
+          <ul class="nav flex-column">
+            <li class="nav-item">
+              <i class="material-symbols-outlined"> home </i>
+              <a class="nav-link" href="{{ url_for('home') }}">Home </a>
+            </li>
+            <li class="nav-item">
+              <i class="material-symbols-outlined"> thermostat </i>
+              <a class="nav-link" href="{{ url_for('forecast') }}">Looking ahead</a>
+            </li>
+            <li class="nav-item">
+              <i class="material-symbols-outlined"> person_raised_hand </i>
+              <a class="nav-link" href="{{ url_for('about') }}">About</a>
+            </li>
+            <li class="nav-item">
+              <i class="material-symbols-outlined"> mode_heat_off </i>
+              <a class="nav-link" href="{{ url_for('norisk') }}">No Risk</a>
+            </li>
+            <li class="nav-item">
+              <i class="material-symbols-outlined"> thermometer_gain </i>
+              <a class="nav-link" href="{{ url_for('minor') }}">Minor</a>
+            </li>
+            <li class="nav-item">
+              <i class="material-symbols-outlined"> sunny </i>
+              <a class="nav-link" href="{{ url_for('moderate') }}">Moderate</a>
+            </li>
+            <li class="nav-item">
+              <i class="material-symbols-outlined"> mode_heat </i>
+              <a class="nav-link" href="{{ url_for('major') }}">Major</a>
+            </li>
+            <li class="nav-item">
+              <i class="material-symbols-outlined"> emergency_heat </i>
+              <a class="nav-link" href="{{ url_for('extreme') }}">Extreme</a>
+            </li>
+          </ul>
+        </div>
+        <!------------------------------------------------------------------------------------- 
+            Block content
+          --------------------------------------------------------------------------------------->
+        <div class="col pb-3">{% block content %} {% endblock %}</div>
+      </div>
+    </div>
+    <footer class="footer mt-auto py-3 border-top">
+      <div class="container">
+        <a href="https://umd.edu/">
+          <img
+            src="{{url_for('static', filename='university-of-maryland-logo.png')}}"
+            class="rounded mx-auto d-block"
+            width="200"
+        /></a>
+      </div>
+    </footer>
+    <!------------------------------------------------------------------------------------- 
+        Scripts
+    --------------------------------------------------------------------------------------->
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
+      crossorigin="anonymous"
+    ></script>
+    <script>
+      const navLinkEls = document.querySelectorAll('.nav-link');
+      const windowPathname = window.location.pathname;
+      navLinkEls.forEach((navLinkEl) => {
+        const navLinkPathname = new URL(navLinkEl.href).pathname;
+        if (windowPathname === navLinkPathname) {
+          navLinkEl.classList.add('active');
+        }
+      });
+    </script>
+  </body>
+</html>
+<script></script>

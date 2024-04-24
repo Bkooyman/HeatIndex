@@ -1,0 +1,33 @@
+{% extends "index.html" %} {% block content %}
+<div class="container-fluid">
+  <div class="section-title" style="background-color: aliceblue;">
+    <span>Seven Day Heat Index Predictions</span>
+  </div>
+
+  <div class="d-flex flex-wrap gap-4 p-4 justify-content-center">
+    {% for period in forecast %}
+
+    <div class="card card-box-shadow" style="width: 14rem">
+      <div class="card-body">
+        <h5 class="card-title">{{ period['name'] }}</h5>
+        <div class="d-flex align-items-center justify-content-between  w-100 mb-2 ">
+          <h6 class="card-subtitle  text-muted">{{period['shortForecast']}}</h6>
+        <i class="material-symbols-outlined"
+           style="cursor: pointer; color: dodgerblue; font-size: 1.25rem;" 
+           data-bs-toggle="tooltip" data-bs-placement="top" title='{{period['detailedForecast']}}'>
+          chat_info
+          </i>
+        </div>
+        <img src={{period['icon']}} alt='' style="border-radius: .5rem;" >
+        <ul class="list-group list-group-flush pt-2">
+          <li class="list-group-item">Temperature: {{ period['temperature'] }}</li>
+          <li class="list-group-item">Humidity: {{ period['humidity'] }}</li>
+          <li class="list-group-item">Heat index: {{ period['heatIndex'] }}</li>
+          <li class="list-group-item">Risk level: {{ period['riskLevel'] }}</li>
+        </ul>
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+</div>
+{% endblock %}

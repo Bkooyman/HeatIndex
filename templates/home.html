@@ -1,0 +1,866 @@
+{% extends "index.html" %} {% block content %}
+<div class="container-fluid">
+  <div class="section-title {{g.riskLevelsDict[risk_level]}}">
+    <center>Today's Heat Index: {{hi}}</center>
+  </div>
+  <div class="container-fluid">
+    <tr>
+      <td>
+        <p><b>Risk Level:</b> {{risk_level}}</p>
+      </td>
+      <td>
+        <b>Trigger:</b>
+        {% if risk_level == "No Risk" %} N/A {% endif %} {% if risk_level == "Minor" %} Triggered by Heat Index issued
+        by NWS day of {% endif %} {% if risk_level == "Moderate" %} Triggered by Heat Index issued by NWS day of {%
+        endif %} {% if risk_level == "Major" %}
+        <li>
+          NWS issues heat advisory
+          <a
+            href="https://health.maryland.gov/preparedness/Documents/MDH%20Extreme%20Heat%20Emergency%20Plan%202023.pdf"
+            >(MDH)</a
+          >
+        </li>
+        <li>
+          Heat advisory indexes likely within the next 0.5-2 days
+          <a
+            href="https://health.maryland.gov/preparedness/Documents/MDH%20Extreme%20Heat%20Emergency%20Plan%202023.pdf"
+            >(MDH)</a
+          >
+        </li>
+        {% endif %} {% if risk_level == "Extreme" %}
+        <li>
+          NWS issued Excessive Heat Warning or are likely to be in an Excessive Heat Warning within the next 0.5-2 days
+          <a
+            href="https://health.maryland.gov/preparedness/Documents/MDH%20Extreme%20Heat%20Emergency%20Plan%202023.pdf"
+            >(MDH)</a
+          >
+        </li>
+        <li>
+          Extreme Heat weather anticipated to continue for multiple days
+          <a
+            href="https://health.maryland.gov/preparedness/Documents/MDH%20Extreme%20Heat%20Emergency%20Plan%202023.pdf"
+            >(MDH)</a
+          >
+        </li>
+        {% endif %}
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p><b>Temperature:</b> {{temperature}}</p>
+      </td>
+      <td>
+        <p><b>Humidity:</b> {{humidity}}</p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p>
+          <b>Health Implications:</b>
+          {% if risk_level == "No Risk" %} Little to no risk associated with heat {% endif %} {% if risk_level ==
+          "Minor" %} Fatigue with prolonged exposure and/or physical activity; increased risk of sunburn {% endif %} {%
+          if risk_level == "Moderate" %} Sunstroke, heat cramps and heat exhaustion are possible with prolonged exposure
+          and/or physical activity {% endif %} {% if risk_level == "Major" %} Sunstroke, heat cramps and heat exhaustion
+          are possible with prolonged exposure and/or physical activity {% endif %} {% if risk_level == "Extreme" %}
+          Heatstroke/sunstroke is highly likely with continued exposure. This is a multi-day heat event {% endif %}
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <b>General Guidance for Supervisors and Departments:</b>
+        <ul>
+          {% if risk_level == "No Risk" %}
+          <ln
+            >Download Interactive National Weather Service (iNWS) mobile application. It will send you customized text
+            messages and e-mail alerts in the case of excessive heat warning, watch, advisory, and outlook.</ln
+          >
+          <ln>Download the OSHA Heat Index Mobile app for additional recommendations and monitoring.</ln>
+          <ln>Download the OSHA-NIOSH Heat Safety Tool application to monitor heat indices.</ln>
+          {% endif %} {% if risk_level == "Minor" %}
+          <li>
+            Download Interactive National Weather Service (iNWS) mobile application. It will send you customized text
+            messages and e-mail alerts in the case of excessive heat warning, watch, advisory, and outlook.
+          </li>
+          <li>Download the OSHA Heat Index Mobile app for additional recommendations and monitoring.</li>
+          <li>Download the OSHA-NIOSH Heat Safety Tool application to monitor heat indices.</li>
+          <li>
+            Implement basic health and safety planning to provide general awareness and reminders about the potential
+            for heat stress
+          </li>
+          <li>Ensure employees are trained on heat stress and prevention measures.</li>
+          <li>Contact UMD Health Center and safety professionals for heat stress training.</li>
+          {% endif %} {% if risk_level == "Moderate" %}
+          <li>
+            Download Interactive National Weather Service (iNWS) mobile application. It will send you customized text
+            messages and e-mail alerts in the case of excessive heat warning, watch, advisory, and outlook.
+          </li>
+          <li>Download the OSHA Heat Index Mobile app for additional recommendations and monitoring.</li>
+          <li>Download the OSHA-NIOSH Heat Safety Tool application to monitor heat indices.</li>
+          <li>
+            Implement basic health and safety planning to provide general awareness and reminders about the potential
+            for heat stress.
+          </li>
+          <li>Ensure employees are trained on heat stress and prevention measures.</li>
+          <li>Contact UMD Health Center and safety professionals for heat stress training.</li>
+          <li>Contact health and safety professionals to determine if job safety analysis should be performed.</li>
+          <li>
+            Increase preventative steps including but not limited to providing employees with ample time for breaks,
+            access to cool areaqs, access to water.
+          </li>
+          <li>Check email and department websited for potential changes to schedules.</li>
+          <li>Sign up for UMD Alert messages for potential closures or adjustments to campus schedules.</li>
+          {% endif %} {% if risk_level == "Major" %}
+          <li>
+            Download Interactive National Weather Service (iNWS) mobile application. It will send you customized text
+            messages and e-mail alerts in the case of excessive heat warning, watch, advisory, and outlook.
+          </li>
+          <li>Download the OSHA Heat Index Mobile app for additional recommendations and monitoring.</li>
+          <li>Download the OSHA-NIOSH Heat Safety Tool application to monitor heat indices.</li>
+          <li>
+            Implement basic health and safety planning to provide general awareness and reminders about the potential
+            for heat stress.
+          </li>
+          <li>Ensure employees are trained on heat stress and prevention measures.</li>
+          <li>Contact UMD Health Center and safety professionals for heat stress training.</li>
+          <li>Contact health and safety professionals to determine if job safety analysis should be performed.</li>
+          <li>
+            Increase preventative steps including but not limited to providing employees with ample time for breaks,
+            access to cool areaqs, access to water.
+          </li>
+          <li>Reduce workloads and physical demands of employees.</li>
+          <li>Provide supplemental cooling, fans, or cooling garments.</li>
+          <li>Ensure cool water is always readily available and easily available.</li>
+          <li>Monitor employees regularly for heat stress symptoms.</li>
+          <li>
+            Consider flexible scheduling and alternative work sites for work duties to decrease the potential for heat
+            stress.
+          </li>
+          {% endif %} {% if risk_level == "Extreme" %}
+          <li>
+            Download Interactive National Weather Service (iNWS) mobile application. It will send you customized text
+            messages and e-mail alerts in the case of excessive heat warning, watch, advisory, and outlook.
+          </li>
+          <li>Download the OSHA Heat Index Mobile app for additional recommendations and monitoring.</li>
+          <li>Download the OSHA-NIOSH Heat Safety Tool application to monitor heat indices.</li>
+          <li>Ensure employees are trained on heat stress and prevention measures.</li>
+          <li>Contact UMD Health Center and safety professionals for heat stress training.</li>
+          <li>Reduce workloads and physical demands of employees.</li>
+          <li>Provide supplemental cooling, fans, or cooling garments.</li>
+          <li>Ensure cool water is always readily and easily available.</li>
+          <li>Monitor employees regularly for heat stress symptoms.</li>
+          <li>Departments must implement their heat illness prevention plan.</li>
+          <li>Assign alternate work sites and/or duties to essential employees.</li>
+          {% endif %}
+        </ul>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <b>General Guidance for Employees:</b>
+        <ul>
+          {% if risk_level == "No Risk" %}
+          <li style="display: inline">
+            Sign up to receive notifications about building closures and outages by emailing <a href="mailto:workassignment-crc@umd.edu">workassignment-crc@umd.edu</a>
+            with the building names you are interested in.
+          </li>
+          {% endif %} {% if risk_level == "Minor" %}
+          <li style="display: inline">
+            Sign up to receive notifications about building closures and outages by emailing <a href="mailto:workassignment-crc@umd.edu">workassignment-crc@umd.edu</a>
+            with the building names you are interested in.
+          </li>
+          <li>Follow all requirements and guidance by supervisor/department.</li>
+          <li>Consult with a healthcare provider about any personal or special risks related to heat.</li>
+          <li>Report any heat-related symptoms to supervisor/department and seek medical attention if needed.</li>
+          {% endif %} {% if risk_level == "Moderate" %}
+          <li style="display: inline">
+            Sign up to receive notifications about building closures and outages by emailing <a href="mailto:workassignment-crc@umd.edu">workassignment-crc@umd.edu</a>
+            with the building names you are interested in.
+          </li>
+          <li>Follow all requirements and guidance by supervisor/department.</li>
+          <li>Consult with a healthcare provider about any personal or special risks related to heat.</li>
+          <li>Report any heat-related symptoms to supervisor/department and seek medical attention if needed.</li>
+          <li>Take breaks as offered and suggested by the supervisor/department</li>
+          <li>Check email and department websites for potential changes to schedules.</li>
+          <li>Sign up for UMD Alert messages for potential closures or adjustments to campus schedules.</li>
+          {% endif %} {% if risk_level == "Major" %}
+          <li style="display: inline">
+            Sign up to receive notifications about building closures and outages by emailing <a href="mailto:workassignment-crc@umd.edu">workassignment-crc@umd.edu</a>
+            with the building names you are interested in.
+          </li>
+          <li>Consult with a healthcare provider about any personal or special risks related to heat.</li>
+          <li>Report any heat-related symptoms to supervisor/department and seek medical attention if needed.</li>
+          <li>Take breaks as offered and suggested by the supervisor/department</li>
+          <li>Check email and department websites for potential changes to schedules.</li>
+          <li>Sign up for UMD Alert messages for potential closures or adjustments to campus schedules.</li>
+          {% endif %} {% if risk_level == "Extreme" %}
+          <li style="display: inline">
+            Sign up to receive notifications about building closures and outages by emailing <a href="mailto:workassignment-crc@umd.edu">workassignment-crc@umd.edu</a>
+            with the building names you are interested in.
+          </li>
+          <li>Follow all requirements and guidance by supervisor/department.</li>
+          <li>Consult with a healthcare provider about any personal or special risks related to heat.</li>
+          <li>Report any heat-related symptoms to supervisor/department and seek medical attention if needed.</li>
+          <li>Take breaks as offered and suggested by the supervisor/department</li>
+          <li>Check email and department websites for potential changes to schedules.</li>
+          <li>Sign up for UMD Alert messages for potential closures or adjustments to campus schedules.</li>
+          <li style="display: inline">
+            Follow instructions outlined by supervisor/ department
+            <a href="https://essr.umd.edu/about/occupational-safety-health/heat-safety-workplace">ESSR "Heat Safety"</a>
+          </li>
+          {% endif %}
+        </ul>
+      </td>
+    </tr>
+
+    <tr>
+      <td>
+        <b>General Guidance for Students:</b>
+        <ul>
+          {% if risk_level == "No Risk" %}
+          <li style="display: inline">
+            Sign up to receive notifications about building closures and outages by emailing <a href="mailto:workassignment-crc@umd.edu">workassignment-crc@umd.edu</a>
+            with the building names you are interested in.</li
+          >
+          {% endif %} {% if risk_level == "Minor" %}
+          <li style="display: inline">
+            Sign up to receive notifications about building closures and outages by emailing <a href="mailto:workassignment-crc@umd.edu">workassignment-crc@umd.edu</a>
+            with the building names you are interested in.
+          </li>
+          <li>Take frequent water breaks.</li>
+          <li>Consider moving outdoor exercise or activities indoors.</li>
+          <li>Consult with a healthcare provider about any personal or special risks related to heat.</li>
+          <li>Report any heat-related symptoms to UMD Health Center and/or other healthcare providers.</li>
+          {% endif %} {% if risk_level == "Moderate" %}
+          <li style="display: inline">
+            Sign up to receive notifications about building closures and outages by emailing <a href="mailto:workassignment-crc@umd.edu">workassignment-crc@umd.edu</a>
+            with the building names you are interested in.
+          </li>
+          <li>Take frequent water breaks.</li>
+          <li>Consider moving outdoor exercise or activities indoors.</li>
+          <li>Follow all requirements and guidance provided by professors and administration.</li>
+          <li>Consult with a healthcare provider about any personal or special risks related to heat.</li>
+          <li>Report any heat-related symptoms to UMD Health Center and/or other healthcare providers.</li>
+          <li>Take breaks as offered and suggested by instructors, event staff, etc.</li>
+          <li>Check email and department websites for potential changes to schedules.</li>
+          <li>Sign up for UMD Alert messages for potential closures or adjustments to campus schedules.</li>
+          <li>Reduce caffeine intake, alcoholic beverages, and drinks that are high in sugar</li>
+          {% endif %} {% if risk_level == "Major" %}
+          <li style="display: inline">
+            Sign up to receive notifications about building closures and outages by emailing <a href="mailto:workassignment-crc@umd.edu">workassignment-crc@umd.edu</a>
+            with the building names you are interested in.
+          </li>
+          <li>Take frequent water breaks.</li>
+          <li>Consider moving outdoor exercise or activities indoors.</li>
+          <li>Follow all requirements and guidance provided by professors and administration.</li>
+          <li>Consult with a healthcare provider about any personal or special risks related to heat.</li>
+          <li>Report any heat-related symptoms to UMD Health Center and/or other healthcare providers.</li>
+          <li>Take breaks as offered and suggested by instructors, event staff, etc.</li>
+          <li>Check email and department websites for potential changes to schedules.</li>
+          <li>Sign up for UMD Alert messages for potential closures or adjustments to campus schedules.</li>
+          <li>Reduce caffeine intake, alcoholic beverages, and drinks that are high in sugar</li>
+          <li>Limit outdoor exposure to walking to and from classes, activities, and/or on-campus appointments.</li>
+          <li>Monitor friends, classmates, and peers for signs of heat exhaustion and heat stroke.</li>
+          <li>
+            Apply sunscreen above 50 SPF regularly and wear loose, light-weight, light-colored clothing, and hats that
+            shade your face.
+          </li>
+          {% endif %} {% if risk_level == "Extreme" %}
+          <li style="display: inline">
+            Sign up to receive notifications about building closures and outages by emailing <a href="mailto:workassignment-crc@umd.edu">workassignment-crc@umd.edu</a>
+            with the building names you are interested in.
+          </li>
+          <li>Take frequent water breaks.</li>
+          <li>Follow all requirements and guidance provided by professors and administration.</li>
+          <li>Consult with a healthcare provider about any personal or special risks related to heat.</li>
+          <li>Report any heat-related symptoms to UMD Health Center and/or other healthcare providers.</li>
+          <li>Take breaks as offered and suggested by instructors, event staff, etc.</li>
+          <li>Check email and department websites for potential changes to schedules.</li>
+          <li>Reduce caffeine intake, alcoholic beverages, and drinks that are high in sugar.</li>
+          <li>Limit outdoor exposure to walking to and from classes, activities, and/or on-campus appointments.</li>
+          <li>Monitor friends, classmates, and peers for signs of heat exhaustion and heat stroke.</li>
+          <li>
+            Apply sunscreen above 50 SPF regularly and wear loose, light-weight, light-colored clothing, and hats that
+            shade your face.
+          </li>
+          {% endif %}
+        </ul>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <b>Administration:</b>
+        <ul>
+          {% if risk_level == "No Risk" %}
+          <li>
+            Download Interactive National Weather Service (iNWS) mobile application. It will send you customized text
+            messages and e-mail alerts in the case of excessive heat warning, watch, advisory, and outlook
+          </li>
+          <li>Download the OSHA Heat Index Mobile app for additional recommendations and monitoring.</li>
+          {% endif %} {% if risk_level == "Minor" %}
+          <li>
+            Download Interactive National Weather Service (iNWS) mobile application. It will send you customized text
+            messages and e-mail alerts in the case of excessive heat warning, watch, advisory, and outlook
+          </li>
+          <li>Download the OSHA Heat Index Mobile app for additional recommendations and monitoring.</li>
+          {% endif %} {% if risk_level == "Moderate" %}
+          <li>
+            Download Interactive National Weather Service (iNWS) mobile application. It will send you customized text
+            messages and e-mail alerts in the case of excessive heat warning, watch, advisory, and outlook
+          </li>
+          <li>Download the OSHA Heat Index Mobile app for additional recommendations and monitoring.</li>
+          {% endif %} {% if risk_level == "Major" %}
+          <li>
+            Download Interactive National Weather Service (iNWS) mobile application. It will send you customized text
+            messages and e-mail alerts in the case of excessive heat warning, watch, advisory, and outlook
+          </li>
+          <li>Download the OSHA Heat Index Mobile app for additional recommendations and monitoring.</li>
+          <li>
+            Send out campus-wide messages about proper hydration, wearing light-weight, light-colored, loose-fitting
+            clothing, and heat-protection measures. This heat can be deadly without adequate cooling and hydration.
+          </li>
+          <li>Campus-wide alert system to issue extreme heat warning.</li>
+          <li>
+            Close any building that cannot maintain a temperature threshold of 76 degrees Fahrenheit and ensure cooling
+            centers on campus can maintain a temperature between 64 to 76 degrees Fahrenheit.
+          </li>
+          {% endif %} {% if risk_level == "Extreme" %}
+          <li>
+            Download Interactive National Weather Service (iNWS) mobile application. It will send you customized text
+            messages and e-mail alerts in the case of excessive heat warning, watch, advisory, and outlook
+          </li>
+          <li>Download the OSHA Heat Index Mobile app for additional recommendations and monitoring.</li>
+          <li>
+            Send out campus-wide messages about proper hydration, wearing light-weight, light-colored, loose-fitting
+            clothing, and heat-protection measures. This heat can be deadly without adequate cooling and hydration.
+          </li>
+          <li>Campus-wide alert system to issue extreme heat warning.</li>
+          <li>
+            Close any building that cannot maintain a temperature threshold of 76 degrees Fahrenheit and ensure cooling
+            centers on campus can maintain a temperature between 64 to 76 degrees Fahrenheit.
+          </li>
+          <li>Tell department heads to implement all measures under the extreme risk category.</li>
+          {% endif %}
+        </ul>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <b>Academics:</b>
+        <ul>
+          {% if risk_level == "No Risk" %}
+          <li>No action required.</li>
+          {% endif %} {% if risk_level == "Minor" %}
+          <li>
+            Consider moving exams if there is an abrupt increase in heat. Research finds that there is approximately a
+            0.2% drop in student scores per degree Fahrenheit above room temperature (72 degrees Fahrenheit).
+          </li>
+          <li>Encourage students to bring water bottles to class and to continue hydrating.</li>
+          {% endif %} {% if risk_level == "Moderate" %}
+          <li>
+            Consider moving exams if there is an abrupt increase in heat. Research finds that there is approximately a
+            0.2% drop in student scores per degree Fahrenheit above room temperature (72 degrees Fahrenheit).
+          </li>
+          <li>Encourage students to bring water bottles to class and to continue hydrating.</li>
+          <li>
+            Encourage professors to give students frequent breaks during lectures, given that excessive heat harms
+            cognitive function (attention, memory, reasoning).
+          </li>
+          <li>Encourage staff to keep blinds and windows in classrooms closed.</li>
+          {% endif %} {% if risk_level == "Major" %}
+          <li>Encourage staff to keep blinds and windows in classrooms closed.</li>
+          <li>
+            Move classes online, but keep a few academic buildings open as air condition centers for students that live
+            in housing without AC. The goal is to reduce sun and heat exposure during the hottest parts of the day
+            (10am-5pm).
+          </li>
+          <li>Encourage staff and students to move work and/or activities to lower levels of buildings if possible.</li>
+          {% endif %} {% if risk_level == "Extreme" %}
+          <li>Direct department heads to monitor staff and implement department's Emergency Operation Plan (EOP).</li>
+          <li>
+            Non-essential employees, except those on previously approved leave, are to be considered to be on
+            Administrative Leave.
+          </li>
+          {% endif %}
+        </ul>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <b>Health Care Services:</b>
+        <ul>
+          {% if risk_level == "No Risk" %}
+          <li>No action required.</li>
+          {% endif %} {% if risk_level == "Minor" %}
+          <li>Consider providing sunscreen and icepacks to employees and students as requested.</li>
+          {% endif %} {% if risk_level == "Moderate" %}
+          <li>Consider providing sunscreen and icepacks to employees and students as requested.</li>
+          <li>Provide information to students and employees on signs of heat-related illness as requested.</li>
+          {% endif %} {% if risk_level == "Major" %}
+          <li>Consider providing sunscreen and icepacks to employees and students as requested.</li>
+          <li>Provide information to students and employees on signs of heat-related illness as requested.</li>
+          <li>Prepare and anticipate increased demand on health care services and heat-related illnesses.</li>
+          {% endif %} {% if risk_level == "Extreme" %}
+          <li>Consider providing sunscreen and icepacks to employees and students as requested.</li>
+          <li>Provide information to students and employees on signs of heat-related illness as requested.</li>
+          <li>Bring additional staff on-site to meet increased demand.</li>
+          {% endif %}
+        </ul>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <b>Facilities Management:</b>
+        <ul>
+          {% if risk_level == "No Risk" %}
+          <li>No action required.</li>
+          {% endif %} {% if risk_level == "Minor" %}
+          <li>Ensure chillers and cooling equipment can handle current heat index.</li>
+          {% endif %} {% if risk_level == "Moderate" %}
+          <li>Ensure chillers and cooling equipment can handle current heat index.</li>
+          {% endif %} {% if risk_level == "Major" %}
+          <li>Follow all recommendations in the minor and moderate risk levels.</li>
+          <li>24/7 crew available to monitor and operate HVAC systems.</li>
+          {% endif %} {% if risk_level == "Extreme" %}
+          <li>Follow all recommendations in the minor and moderate risk levels.</li>
+          <li>24/7 crew available to monitor and operate HVAC systems.</li>
+          {% endif %}
+        </ul>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <b>Housing:</b>
+        <ul>
+          {% if risk_level == "No Risk" %}
+          <li>No action required.</li>
+          {% endif %} {% if risk_level == "Minor" %}
+          <li>Encourage residents to open windows at night and use fans.</li>
+          {% endif %} {% if risk_level == "Moderate" %}
+          <li>Encourage residents to open windows at night and use fans.</li>
+          {% endif %} {% if risk_level == "Major" %}
+          <li>
+            Educate residents on effective energy usage. Stand-alone AC units are extremely inefficient, so usage should
+            be reduced. Turn off lights, encourage hybrid work, use fans instead of AC, and recommend keeping the
+            thermostat slightly higher than comfortable.
+          </li>
+          <li>Provide beds in air-conditioned lounges of non-airconditioned dorms for students to use.</li>
+          {% endif %} {% if risk_level == "Extreme" %}
+          <li>
+            Educate residents on effective energy usage. Stand-alone AC units are extremely inefficient, so usage should
+            be reduced. Turn off lights, encourage hybrid work, use fans instead of AC, and recommend keeping the
+            thermostat slightly higher than comfortable.
+          </li>
+          <li>Provide beds in air-conditioned lounges of non-airconditioned dorms for students to use.</li>
+          {% endif %}
+        </ul>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <b>Dining:</b>
+        <ul>
+          {% if risk_level == "No Risk" %}
+          <li>No action required.</li>
+          {% endif %} {% if risk_level == "Minor" %}
+          <li>No action required.</li>
+          {% endif %} {% if risk_level == "Moderate" %}
+          <li>
+            Reduce hot food options in dining halls, as hot food can increase body temperature. Provide more cold food
+            options.
+          </li>
+          {% endif %} {% if risk_level == "Major" %}
+          <li>
+            Reduce hot food options in dining halls, as hot food can increase body temperature. Provide more cold food
+            options.
+          </li>
+          <li>Encourage students to eat smaller, but more frequent meals.</li>
+          {% endif %} {% if risk_level == "Extreme" %}
+          <li>
+            Reduce hot food options in dining halls, as hot food can increase body temperature. Provide more cold food
+            options.
+          </li>
+          <li>Encourage students to eat smaller, but more frequent meals.</li>
+          {% endif %}
+        </ul>
+      </td>
+    </tr>
+
+    <tr>
+      <td>
+        <b>Outdoor Workers:</b>
+        <ul>
+          {% if risk_level == "No Risk" %}
+          <li>No action required.</li>
+          {% endif %} {% if risk_level == "Minor" %}
+          <li>Provide shading for outdoor workers and encourage outdoor workers to take more breaks.</li>
+          <li>Provide sunscreen on-site and educate workers on sunburn.</li>
+          <li>Encourage workers to drink water frequently.</li>
+          {% endif %} {% if risk_level == "Moderate" %}
+          <li>Provide shading for outdoor workers and encourage outdoor workers to take more breaks.</li>
+          <li>Provide sunscreen on-site and educate workers on sunburn.</li>
+          <li>Encourage workers to drink water frequently.</li>
+          <li>
+            Educate workers on proper PPE: SPF15+, sunglasses, wide-brimmed hats, light-weight, light-color, and
+            loose-fitting clothing.
+          </li>
+          <li>Encourage reduced caffeine consumption.</li>
+          <li>Water consumption every 15-20 minutes.</li>
+          {% endif %} {% if risk_level == "Major" %}
+          <li>Provide shading for outdoor workers and encourage outdoor workers to take more breaks.</li>
+          <li>Provide sunscreen on-site and educate workers on sunburn.</li>
+          <li>Encourage workers to drink water frequently.</li>
+          <li>
+            Educate workers on proper PPE: SPF15+, sunglasses, wide-brimmed hats, light-weight, light-color, and
+            loose-fitting clothing.
+          </li>
+          <li>Encourage reduced caffeine consumption.</li>
+          <li>Water consumption every 15-20 minutes.</li>
+          <li>
+            Move all outdoor work to before 10am and after 5pm. If outdoor work is necessary, encourage frequent and
+            prolonged breaks in air-conditioned areas and access to cold water and other hydration materials.
+          </li>
+          <li>Monitor workers for signs of heat exhaustion and heat stroke.</li>
+          {% endif %} {% if risk_level == "Extreme" %}
+          <li>Essential employees to follow all minor, moderate, and major risk level recommendations.</li>
+          <li>Non-essential employees dismissed from work for the day on Administrative leave.</li>
+          {% endif %}
+        </ul>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <b>RecWell (Indoor/Outdoor Recreation):</b>
+        <ul>
+          {% if risk_level == "No Risk" %}
+          <li>No action required.</li>
+          {% endif %} {% if risk_level == "Minor" %}
+          <li>Post CDC Heat-Related Illness Poster in RecWell facilities</li>
+          {% endif %} {% if risk_level == "Moderate" %}
+          <li>Post CDC Heat-Related Illness Poster in RecWell facilities.</li>
+          <li>Move outdoor activities to cooler times of day (before 10am or after 5pm).</li>
+          <li>
+            Provide supplemental cooling methods including but not limited to using fans, providing access to cool
+            water, using dehumidifiers, providing ice as requested, etc.
+          </li>
+          {% endif %} {% if risk_level == "Major" %}
+          <li>Move outdoor activities to cooler times of day (before 10am or after 5pm).</li>
+          <li>
+            Provide supplemental cooling methods including but not limited to using fans, providing access to cool
+            water, using dehumidifiers, providing ice as requested, etc.
+          </li>
+          <li>Move all outdoor recreation inside or cancel outdoor recreation events.</li>
+          {% endif %}{% if risk_level == "Extreme" %}
+          <li>Close recreation facilities.</li>
+          {% endif %}
+        </ul>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <b>Events (Indoor/Outdoor Events):</b>
+        <ul>
+          {% if risk_level == "No Risk" %}
+          <li>No action required.</li>
+          {% endif %} {% if risk_level == "Minor" %}
+          <li>No action required.</li>
+          {% endif %} {% if risk_level == "Moderate" %}
+          <li>
+            Ensure all events hosted by non-University clients have been insured through TULIP or a third-party event
+            insurance agency.
+          </li>
+          {% endif %} {% if risk_level == "Major" %}
+          <li>
+            Ensure all events hosted by non-University clients have been insured through TULIP or a third-party event
+            insurance agency.
+          </li>
+          <li>
+            Move all outdoor events to indoors or cancel them. If events are moved indoors, ensure they are moved to
+            well-ventilated, air-conditioned areas
+          </li>
+          {% endif %} {% if risk_level == "Extreme" %}
+          <li>
+            Ensure all events hosted by non-University clients have been insured through TULIP or a third-party event
+            insurance agency.
+          </li>
+          <li>
+            Move all outdoor events to indoors or cancel them. If events are moved indoors, ensure they are moved to
+            well-ventilated, air-conditioned areas
+          </li>
+          {% endif %}
+        </ul>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <b>Athletics:</b>
+        <ul>
+          {% if risk_level == "No Risk" %}
+          <li>No action required.</li>
+          {% endif %} {% if risk_level == "Minor" %}
+          <li>Increase hydration and encourage more frequent breaks in shaded areas.</li>
+          <li>Follow heat acclimatization protocols listed by NCAA for the first 7-14 days of practice.</li>
+          <li>Post CDC heat-related illness information around facilities.</li>
+          {% endif %} {% if risk_level == "Moderate" %}
+          <li>Increase hydration and encourage more frequent breaks in shaded areas.</li>
+          <li>Follow heat acclimatization protocols listed by NCAA for the first 7-14 days of practice.</li>
+          <li>Post CDC heat-related illness information around facilities.</li>
+          <li>Proceed with extra caution if during an acclimatization period.</li>
+          <li>Move practices to before 10am or after 5pm if during the acclimatization period.</li>
+          <li>
+            Athletes should drink 2+ cups of water and/or sports drinks in the hour before competition/practice. Sports
+            drinks should contain no more than 6-8% of carbohydrates and electrolytes to enhance fluid consumption.
+          </li>
+          <li>Drink water/fluids every 15-20 minutes through practices and competitions.</li>
+          <li>
+            Access to heat stress monitor, rectal thermometer, and cold water immersion tub should be easily accessible.
+          </li>
+          {% endif %} {% if risk_level == "Major" %}
+          <li>Increase hydration and encourage more frequent breaks in shaded areas.</li>
+          <li>Follow heat acclimatization protocols listed by NCAA for the first 7-14 days of practice.</li>
+          <li>Post CDC heat-related illness information around facilities.</li>
+          <li>Proceed with extra caution if during an acclimatization period.</li>
+          <li>Move practices to before 10am or after 5pm if during the acclimatization period.</li>
+          <li>
+            Athletes should drink 2+ cups of water and/or sports drinks in the hour before competition/practice. Sports
+            drinks should contain no more than 6-8% of carbohydrates and electrolytes to enhance fluid consumption.
+          </li>
+          <li>Drink water/fluids every 15-20 minutes through practices and competitions.</li>
+          <li>
+            Access to heat stress monitor, rectal thermometer, and cold water immersion tub should be easily accessible.
+          </li>
+          <li>Move practice to before 10am or after 5pm or indoors.</li>
+          <li>
+            Athletes should report dark urine, rapid weight loss, or weight gain during practice/competition to athletic
+            staff.
+          </li>
+          <li>
+            Student-athletes' weights should be recorded before and after every workout, practice, and competition to
+            detect progressive dehydration and loss of body fluids.
+          </li>
+          {% endif %} {% if risk_level == "Extreme" %}
+          <li>Follow heat acclimatization protocols listed by NCAA for the first 7-14 days of practice.</li>
+          <li>Post CDC heat-related illness information around facilities.</li>
+          <li>Proceed with extra caution if during an acclimatization period.</li>
+          <li>Move practices to before 10am or after 5pm if during the acclimatization period.</li>
+          <li>
+            Athletes should drink 2+ cups of water and/or sports drinks in the hour before competition/practice. Sports
+            drinks should contain no more than 6-8% of carbohydrates and electrolytes to enhance fluid consumption.
+          </li>
+          <li>Drink water/fluids every 15-20 minutes through practices and competitions.</li>
+          <li>
+            Access to heat stress monitor, rectal thermometer, and cold water immersion tub should be easily accessible.
+          </li>
+          <li>Move practice to before 10am or after 5pm or indoors.</li>
+          <li>
+            Athletes should report dark urine, rapid weight loss, or weight gain during practice/competition to athletic
+            staff.
+          </li>
+          <li>
+            Student-athletes' weights should be recorded before and after every workout, practice, and competition to
+            detect progressive dehydration and loss of body fluids.
+          </li>
+          <li>Cancel practice if it cannot be moved indoors.</li>
+          {% endif %}
+        </ul>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <b>Research:</b>
+        <ul>
+          {% if risk_level == "No Risk" %}
+          <li>No action required.</li>
+          {% endif %} {% if risk_level == "Minor" %}
+          <li>
+            Implement basic health and safety planning to provide general awareness and reminders about the potential
+            for heat stress and preventive measures.
+          </li>
+          <li>Ensure that employees are trained on heat stress symptoms and prevention measures.</li>
+          <li>Recommend wearing lightweight and light-colored clothing.</li>
+          <li>Drink water or other cool fluids regularly.</li>
+          {% endif %} {% if risk_level == "Moderate" %}
+          <li>
+            Implement basic health and safety planning to provide general awareness and reminders about the potential
+            for heat stress and preventive measures.
+          </li>
+          <li>Ensure that employees are trained on heat stress symptoms and prevention measures.</li>
+          <li>Recommend wearing lightweight and light-colored clothing.</li>
+          <li>Drink water or other cool fluids regularly.</li>
+          <li>
+            Contact health and safety professionals to determine if job safety analysis should be performed to
+            change/lessen physical activity, time spent working, or other prevention measures.
+          </li>
+          <li>
+            Increase preventive steps in anticipation of warmer temperatures including reminders about staying hydrated,
+            taking breaks, and watching for signs of heat-related illness.
+          </li>
+          <li>Provide ample time for breaks and access to cool, shaded places to take them.</li>
+          <li>Ensure that cool water is always available.</li>
+          {% endif %} {% if risk_level == "Major" %}
+          <li>
+            Implement basic health and safety planning to provide general awareness and reminders about the potential
+            for heat stress and preventive measures.
+          </li>
+          <li>Ensure that employees are trained on heat stress symptoms and prevention measures.</li>
+          <li>Recommend wearing lightweight and light-colored clothing.</li>
+          <li>Drink water or other cool fluids regularly.</li>
+          <li>
+            Contact health and safety professionals to determine if job safety analysis should be performed to
+            change/lessen physical activity, time spent working, or other prevention measures.
+          </li>
+          <li>
+            Increase preventive steps in anticipation of warmer temperatures including reminders about staying hydrated,
+            taking breaks, and watching for signs of heat-related illness.
+          </li>
+          <li>Provide ample time for breaks and access to cool, shaded places to take them.</li>
+          <li>Ensure that cool water is always available.</li>
+          <li>Reduce the workloads and physical demands of employees.</li>
+          <li>Provide supplemental cooling, fans, or cooling garments.</li>
+          <li>Ensure cool water is always available and locations for breaks have adequate, cool airflow.</li>
+          <li>Monitor employees regularly for heat stress symptoms and arrange for medical assistance as needed.</li>
+          {% endif %} {% if risk_level == "Extreme" %}
+          <li>
+            Implement basic health and safety planning to provide general awareness and reminders about the potential
+            for heat stress and preventive measures.
+          </li>
+          <li>Ensure that employees are trained on heat stress symptoms and prevention measures.</li>
+          <li>Recommend wearing lightweight and light-colored clothing.</li>
+          <li>Drink water or other cool fluids regularly.</li>
+          <li>
+            Contact health and safety professionals to determine if job safety analysis should be performed to
+            change/lessen physical activity, time spent working, or other prevention measures.
+          </li>
+          <li>
+            Increase preventive steps in anticipation of warmer temperatures including reminders about staying hydrated,
+            taking breaks, and watching for signs of heat-related illness.
+          </li>
+          <li>Provide ample time for breaks and access to cool, shaded places to take them.</li>
+          <li>Ensure that cool water is always available.</li>
+          <li>Reduce the workloads and physical demands of employees.</li>
+          <li>Provide supplemental cooling, fans, or cooling garments.</li>
+          <li>Ensure cool water is always available and locations for breaks have adequate, cool airflow.</li>
+          <li>Monitor employees regularly for heat stress symptoms and arrange for medical assistance as needed.</li>
+          {% endif %}
+        </ul>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <b>Agriculture/Animal Care:</b>
+        <ul>
+          {% if risk_level == "No Risk" %}
+          <li>No action required.</li>
+          {% endif %} {% if risk_level == "Minor" %}
+          <li>
+            Encourage students with service animals, pets, ESAs, and students who participate in Terps Raising Pups to
+            provide their animals with frequent water breaks.
+          </li>
+          <li>Encourage students to not leave their animals unattended in areas without air conditioning.</li>
+          {% endif %} {% if risk_level == "Moderate" %}
+          <li>
+            Encourage students with service animals, pets, ESAs, and students who participate in Terps Raising Pups to
+            provide their animals with frequent water breaks.
+          </li>
+          <li>Encourage students to not leave their animals unattended in areas without air conditioning.</li>
+          <li>
+            Ensure farm animals, horses, and livestock are fed during cooler hours (early morning and/or evening).
+          </li>
+          <li>Limit exercise and grazing to early mornings and evenings.</li>
+          <li>Ensure proper ventilation in the barn and other areas in which animals are kept.</li>
+          {% endif %} {% if risk_level == "Major" %}
+          <li>
+            Encourage students with service animals, pets, ESAs, and students who participate in Terps Raising Pups to
+            provide their animals with frequent water breaks.
+          </li>
+          <li>Encourage students to not leave their animals unattended in areas without air conditioning.</li>
+          <li>
+            Ensure farm animals, horses, and livestock are fed during cooler hours (early morning and/or evening).
+          </li>
+          <li>Limit exercise and grazing to early mornings and evenings.</li>
+          <li>Ensure proper ventilation in the barn and other areas in which animals are kept.</li>
+          <li>Monitor animals for signs of heat-related illnesses.</li>
+          {% endif %} {% if risk_level == "Extreme" %}
+          <li>
+            Encourage students with service animals, pets, ESAs, and students who participate in Terps Raising Pups to
+            provide their animals with frequent water breaks.
+          </li>
+          <li>Encourage students to not leave their animals unattended in areas without air conditioning.</li>
+          <li>
+            Ensure farm animals, horses, and livestock are fed during cooler hours (early morning and/or evening).
+          </li>
+          <li>Limit exercise and grazing to early mornings and evenings.</li>
+          <li>Ensure proper ventilation in the barn and other areas in which animals are kept.</li>
+          <li>Monitor animals for signs of heat-related illnesses.</li>
+          {% endif %}
+        </ul>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <b>Child Care Services:</b>
+        <ul>
+          {% if risk_level == "No Risk" %}
+          <li>No action required.</li>
+          {% endif %} {% if risk_level == "Minor" %}
+          <li>No action required.</li>
+          {% endif %} {% if risk_level == "Moderate" %}
+          <li>
+            Email parents about proper sun protection for children, SPF should be applied 30 minutes before school, and
+            children should wear cool, loose-fit clothing with a hat to shade their face.
+          </li>
+          <li>Constantly monitor children for signs of heat-related illness.</li>
+          {% endif %} {% if risk_level == "Major" %}
+          <li>
+            Email parents about proper sun protection for children, SPF should be applied 30 minutes before school, and
+            children should wear cool, loose-fit clothing with a hat to shade their face.
+          </li>
+          <li>Constantly monitor children for signs of heat-related illness.</li>
+          {% endif %} {% if risk_level == "Extreme" %}
+          <li>
+            Email parents about proper sun protection for children, SPF should be applied 30 minutes before school, and
+            children should wear cool, loose-fit clothing with a hat to shade their face.
+          </li>
+          <li>Constantly monitor children for signs of heat-related illness.</li>
+          {% endif %}
+        </ul>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <b>IT:</b>
+        <ul>
+          {% if risk_level == "No Risk" %}
+          <li>No action required.</li>
+          {% endif %} {% if risk_level == "Minor" %}
+          <li>
+            Ensure computer labs and other rooms with essential technology maintain a temperature of 85 degrees
+            Fahrenheit. Temperatures above this threshold can lead to a reduction in equipment life expectancy of up to
+            40%.
+          </li>
+          {% endif %} {% if risk_level == "Moderate" %}
+          <li>
+            Ensure computer labs and other rooms with essential technology maintain a temperature of 85 degrees
+            Fahrenheit. Temperatures above this threshold can lead to a reduction in equipment life expectancy of up to
+            40%.
+          </li>
+          {% endif %} {% if risk_level == "Major" %}
+          <li>
+            Ensure computer labs and other rooms with essential technology maintain a temperature of 85 degrees
+            Fahrenheit. Temperatures above this threshold can lead to a reduction in equipment life expectancy of up to
+            40%.
+          </li>
+          {% endif %} {% if risk_level == "Extreme" %}
+          <li>
+            Ensure computer labs and other rooms with essential technology maintain a temperature of 85 degrees
+            Fahrenheit. Temperatures above this threshold can lead to a reduction in equipment life expectancy of up to
+            40%.
+          </li>
+          {% endif %}
+        </ul>
+      </td>
+    </tr>
+  </div>
+</div>
+{% endblock %}
+

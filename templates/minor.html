@@ -1,0 +1,469 @@
+{% extends "index.html" %} {% block content %}
+<div class="container-fluid">
+  <div class="section-title minor-color">
+    <span>Minor Risk</span>
+  </div>
+
+  <div class="section-description" style="background-color: rgba(255, 254, 182, 0.979)">
+    <div><b>Trigger:</b> Triggered by Heat Index issued by NWS day of</div>
+    <div><b>Heat Index Range:</b> 80-90</div>
+    <div>
+      <b>Health Implications:</b> Fatigue with prolonged exposure and/or physical activity; increased risk of sunburn
+    </div>
+  </div>
+  <div class="accordion" id="accordionPanelsStayOpenExample">
+    <div class="accordion-item">
+      <h2 class="accordion-header" id="panelsStayOpen-headingOne">
+        <button
+          class="accordion-button"
+          style="background-color: rgba(255, 252, 83, 0.979)"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#panelsStayOpen-collapseOne"
+          aria-expanded="true"
+          aria-controls="panelsStayOpen-collapseOne"
+        >
+          General Guidance for Supervisors and Departments
+        </button>
+      </h2>
+      <div
+        id="panelsStayOpen-collapseOne"
+        class="accordion-collapse collapse show"
+        aria-labelledby="panelsStayOpen-headingOne"
+      >
+        <div class="accordion-body" style="background-color: rgba(255, 254, 182, 0.979)">
+          <li>
+            Download Interactive National Weather Service (iNWS) mobile application. It will send you customized text
+            messages and e-mail alerts in the case of excessive heat warning, watch, advisory, and outlook.
+          </li>
+          <li>Download the OSHA Heat Index Mobile app for additional recommendations and monitoring.</li>
+          <li>Download the OSHA-NIOSH Heat Safety Tool application to monitor heat indices.</li>
+          <li>
+            Implement basic health and safety planning to provide general awareness and reminders about the potential
+            for heat stress
+          </li>
+          <li>Ensure employees are trained on heat stress and prevention measures.</li>
+          <li>Contact UMD Health Center and safety professionals for heat stress training.</li>
+        </div>
+      </div>
+    </div>
+    <div class="accordion-item">
+      <h2 class="accordion-header" id="panelsStayOpen-headingTwo">
+        <button
+          class="accordion-button collapsed"
+          style="background-color: rgba(255, 252, 83, 0.979)"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#panelsStayOpen-collapseTwo"
+          aria-expanded="false"
+          aria-controls="panelsStayOpen-collapseTwo"
+        >
+          General Guidance for Employees
+        </button>
+      </h2>
+      <div
+        id="panelsStayOpen-collapseTwo"
+        class="accordion-collapse collapse"
+        aria-labelledby="panelsStayOpen-headingTwo"
+      >
+        <div class="accordion-body" style="background-color: rgba(255, 254, 182, 0.979)">
+          <li>
+            Sign up to receive notifications about building closures and outages by emailing workassignment-crc@umd.edu
+            with the building names you are interested in.
+          </li>
+          <li>Follow all requirements and guidance by supervisor/department.</li>
+          <li>Consult with a healthcare provider about any personal or special risks related to heat.</li>
+          <li>Report any heat-related symptoms to supervisor/department and seek medical attention if needed.</li>
+        </div>
+      </div>
+    </div>
+    <div class="accordion-item">
+      <h2 class="accordion-header" id="panelsStayOpen-headingThree">
+        <button
+          class="accordion-button collapsed"
+          style="background-color: rgba(255, 252, 83, 0.979)"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#panelsStayOpen-collapseThree"
+          aria-expanded="false"
+          aria-controls="panelsStayOpen-collapseThree"
+        >
+          General Guidance for Students
+        </button>
+      </h2>
+      <div
+        id="panelsStayOpen-collapseThree"
+        class="accordion-collapse collapse"
+        aria-labelledby="panelsStayOpen-headingThree"
+      >
+        <div class="accordion-body" style="background-color: rgba(255, 254, 182, 0.979)">
+          <li>
+            Sign up to receive notifications about building closures and outages by emailing workassignment-crc@umd.edu
+            with the building names you are interested in.
+          </li>
+          <li>Take frequent water breaks.</li>
+          <li>Consider moving outdoor exercise or activities indoors.</li>
+          <li>Consult with a healthcare provider about any personal or special risks related to heat.</li>
+          <li>Report any heat-related symptoms to UMD Health Center and/or other healthcare providers.</li>
+        </div>
+      </div>
+    </div>
+    <div class="accordion-item">
+      <h2 class="accordion-header" id="panelsStayOpen-headingFour">
+        <button
+          class="accordion-button collapsed"
+          style="background-color: rgba(255, 252, 83, 0.979)"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#panelsStayOpen-collapseFour"
+          aria-expanded="false"
+          aria-controls="panelsStayOpen-collapseFour"
+        >
+          Administration
+        </button>
+      </h2>
+      <div
+        id="panelsStayOpen-collapseFour"
+        class="accordion-collapse collapse"
+        aria-labelledby="panelsStayOpen-headingFour"
+      >
+        <div class="accordion-body" style="background-color: rgba(255, 254, 182, 0.979)">
+          <li>
+            Download Interactive National Weather Service (iNWS) mobile application. It will send you customized text
+            messages and e-mail alerts in the case of excessive heat warning, watch, advisory, and outlook
+          </li>
+          <li>Download the OSHA Heat Index Mobile app for additional recommendations and monitoring.</li>
+        </div>
+      </div>
+    </div>
+    <div class="accordion-item">
+      <h2 class="accordion-header" id="panelsStayOpen-headingFive">
+        <button
+          class="accordion-button collapsed"
+          style="background-color: rgba(255, 252, 83, 0.979)"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#panelsStayOpen-collapseFive"
+          aria-expanded="false"
+          aria-controls="panelsStayOpen-collapseFive"
+        >
+          Academics
+        </button>
+      </h2>
+      <div
+        id="panelsStayOpen-collapseFive"
+        class="accordion-collapse collapse"
+        aria-labelledby="panelsStayOpen-headingFive"
+      >
+        <div class="accordion-body" style="background-color: rgba(255, 254, 182, 0.979)">
+          <li>
+            Consider moving exams if there is an abrupt increase in heat. Research finds that there is approximately a
+            0.2% drop in student scores per degree Fahrenheit above room temperature (72 degrees Fahrenheit).
+          </li>
+          <li>Encourage students to bring water bottles to class and to continue hydrating.</li>
+        </div>
+      </div>
+    </div>
+    <div class="accordion-item">
+      <h2 class="accordion-header" id="panelsStayOpen-headingSix">
+        <button
+          class="accordion-button collapsed"
+          style="background-color: rgba(255, 252, 83, 0.979)"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#panelsStayOpen-collapseSix"
+          aria-expanded="false"
+          aria-controls="panelsStayOpen-collapseSix"
+        >
+          Health Care Services
+        </button>
+      </h2>
+      <div
+        id="panelsStayOpen-collapseSix"
+        class="accordion-collapse collapse"
+        aria-labelledby="panelsStayOpen-headingSix"
+      >
+        <div class="accordion-body" style="background-color: rgba(255, 254, 182, 0.979)">
+          <li>Consider providing sunscreen and icepacks to employees and students as requested.</li>
+        </div>
+      </div>
+    </div>
+    <div class="accordion-item">
+      <h2 class="accordion-header" id="panelsStayOpen-headingSeven">
+        <button
+          class="accordion-button collapsed"
+          style="background-color: rgba(255, 252, 83, 0.979)"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#panelsStayOpen-collapseSeven"
+          aria-expanded="false"
+          aria-controls="panelsStayOpen-collapseSeven"
+        >
+          Facilities Management
+        </button>
+      </h2>
+      <div
+        id="panelsStayOpen-collapseSeven"
+        class="accordion-collapse collapse"
+        aria-labelledby="panelsStayOpen-headingSeven"
+      >
+        <div class="accordion-body" style="background-color: rgba(255, 254, 182, 0.979)">
+          <li>Ensure chillers and cooling equipment can handle current heat index.</li>
+        </div>
+      </div>
+    </div>
+    <div class="accordion-item">
+      <h2 class="accordion-header" id="panelsStayOpen-headingEight">
+        <button
+          class="accordion-button collapsed"
+          style="background-color: rgba(255, 252, 83, 0.979)"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#panelsStayOpen-collapseEight"
+          aria-expanded="false"
+          aria-controls="panelsStayOpen-collapseEight"
+        >
+          Housing
+        </button>
+      </h2>
+      <div
+        id="panelsStayOpen-collapseEight"
+        class="accordion-collapse collapse"
+        aria-labelledby="panelsStayOpen-headingEight"
+      >
+        <div class="accordion-body" style="background-color: rgba(255, 254, 182, 0.979)">
+          <li>Encourage residents to open windows at night and use fans.</li>
+        </div>
+      </div>
+    </div>
+    <div class="accordion-item">
+      <h2 class="accordion-header" id="panelsStayOpen-headingNine">
+        <button
+          class="accordion-button collapsed"
+          style="background-color: rgba(255, 252, 83, 0.979)"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#panelsStayOpen-collapseNine"
+          aria-expanded="false"
+          aria-controls="panelsStayOpen-collapseNine"
+        >
+          Dining
+        </button>
+      </h2>
+      <div
+        id="panelsStayOpen-collapseNine"
+        class="accordion-collapse collapse"
+        aria-labelledby="panelsStayOpen-headingNine"
+      >
+        <div class="accordion-body" style="background-color: rgba(255, 254, 182, 0.979)">No action required.</div>
+      </div>
+    </div>
+    <div class="accordion-item">
+      <h2 class="accordion-header" id="panelsStayOpen-headingTen">
+        <button
+          class="accordion-button collapsed"
+          style="background-color: rgba(255, 252, 83, 0.979)"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#panelsStayOpen-collapseTen"
+          aria-expanded="false"
+          aria-controls="panelsStayOpen-collapseTen"
+        >
+          Outdoor Workers
+        </button>
+      </h2>
+      <div
+        id="panelsStayOpen-collapseTen"
+        class="accordion-collapse collapse"
+        aria-labelledby="panelsStayOpen-headingTen"
+      >
+        <div class="accordion-body" style="background-color: rgba(255, 254, 182, 0.979)">
+          <li>Provide shading for outdoor workers and encourage outdoor workers to take more breaks.</li>
+          <li>Provide sunscreen on-site and educate workers on sunburn.</li>
+          <li>Encourage workers to drink water frequently.</li>
+        </div>
+      </div>
+    </div>
+    <div class="accordion-item">
+      <h2 class="accordion-header" id="panelsStayOpen-headingEleven">
+        <button
+          class="accordion-button collapsed"
+          style="background-color: rgba(255, 252, 83, 0.979)"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#panelsStayOpen-collapseEleven"
+          aria-expanded="false"
+          aria-controls="panelsStayOpen-collapseEleven"
+        >
+          RecWell (Indoor/Outdoor Recreation)
+        </button>
+      </h2>
+      <div
+        id="panelsStayOpen-collapseEleven"
+        class="accordion-collapse collapse"
+        aria-labelledby="panelsStayOpen-headingEleven"
+      >
+        <div class="accordion-body" style="background-color: rgba(255, 254, 182, 0.979)">
+          <li>Post CDC Heat-Related Illness Poster in RecWell facilities.</li>
+        </div>
+      </div>
+    </div>
+    <div class="accordion-item">
+      <h2 class="accordion-header" id="panelsStayOpen-headingTwelve">
+        <button
+          class="accordion-button collapsed"
+          style="background-color: rgba(255, 252, 83, 0.979)"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#panelsStayOpen-collapseTwelve"
+          aria-expanded="false"
+          aria-controls="panelsStayOpen-collapseTwelve"
+        >
+          Events (Indoor/Outdoor Events)
+        </button>
+      </h2>
+      <div
+        id="panelsStayOpen-collapseTwelve"
+        class="accordion-collapse collapse"
+        aria-labelledby="panelsStayOpen-headingTweleve"
+      >
+        <div class="accordion-body" style="background-color: rgba(255, 254, 182, 0.979)">No action required.</div>
+      </div>
+    </div>
+    <div class="accordion-item">
+      <h2 class="accordion-header" id="panelsStayOpen-headingThirteen">
+        <button
+          class="accordion-button collapsed"
+          style="background-color: rgba(255, 252, 83, 0.979)"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#panelsStayOpen-collapseThirteen"
+          aria-expanded="false"
+          aria-controls="panelsStayOpen-collapseThirteen"
+        >
+          Athletics
+        </button>
+      </h2>
+      <div
+        id="panelsStayOpen-collapseThirteen"
+        class="accordion-collapse collapse"
+        aria-labelledby="panelsStayOpen-headingThirteen"
+      >
+        <div class="accordion-body" style="background-color: rgba(255, 254, 182, 0.979)">
+          <li>Increase hydration and encourage more frequent breaks in shaded areas.</li>
+          <li>Follow heat acclimatization protocols listed by NCAA for the first 7-14 days of practice.</li>
+          <li>Post CDC heat-related illness information around facilities.</li>
+        </div>
+      </div>
+    </div>
+    <div class="accordion-item">
+      <h2 class="accordion-header" id="panelsStayOpen-headingFourteen">
+        <button
+          class="accordion-button collapsed"
+          style="background-color: rgba(255, 252, 83, 0.979)"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#panelsStayOpen-collapseFourteen"
+          aria-expanded="false"
+          aria-controls="panelsStayOpen-collapseFourteen"
+        >
+          Research
+        </button>
+      </h2>
+      <div
+        id="panelsStayOpen-collapseFourteen"
+        class="accordion-collapse collapse"
+        aria-labelledby="panelsStayOpen-headingFourteen"
+      >
+        <div class="accordion-body" style="background-color: rgba(255, 254, 182, 0.979)">
+          <li>
+            Implement basic health and safety planning to provide general awareness and reminders about the potential
+            for heat stress and preventive measures.
+          </li>
+          <li>Ensure that employees are trained on heat stress symptoms and prevention measures.</li>
+          <li>Recommend wearing lightweight and light-colored clothing.</li>
+          <li>Drink water or other cool fluids regularly.</li>
+        </div>
+      </div>
+    </div>
+    <div class="accordion-item">
+      <h2 class="accordion-header" id="panelsStayOpen-headingFifteen">
+        <button
+          class="accordion-button collapsed"
+          style="background-color: rgba(255, 252, 83, 0.979)"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#panelsStayOpen-collapseFifteen"
+          aria-expanded="false"
+          aria-controls="panelsStayOpen-collapseFifteen"
+        >
+          Agriculture/Animal Care
+        </button>
+      </h2>
+      <div
+        id="panelsStayOpen-collapseFifteen"
+        class="accordion-collapse collapse"
+        aria-labelledby="panelsStayOpen-headingFifteen"
+      >
+        <div class="accordion-body" style="background-color: rgba(255, 254, 182, 0.979)">
+          <li>
+            Encourage students with service animals, pets, ESAs, and students who participate in Terps Raising Pups to
+            provide their animals with frequent water breaks.
+          </li>
+          <li>Encourage students to not leave their animals unattended in areas without air conditioning.</li>
+        </div>
+      </div>
+    </div>
+    <div class="accordion-item">
+      <h2 class="accordion-header" id="panelsStayOpen-headingSixteen">
+        <button
+          class="accordion-button collapsed"
+          style="background-color: rgba(255, 252, 83, 0.979)"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#panelsStayOpen-collapseSixteen"
+          aria-expanded="false"
+          aria-controls="panelsStayOpen-collapseSixteen"
+        >
+          Child Care Services
+        </button>
+      </h2>
+      <div
+        id="panelsStayOpen-collapseSixteen"
+        class="accordion-collapse collapse"
+        aria-labelledby="panelsStayOpen-headingSixteen"
+      >
+        <div class="accordion-body" style="background-color: rgba(255, 254, 182, 0.979)">No action required.</div>
+      </div>
+    </div>
+    <div class="accordion-item">
+      <h2 class="accordion-header" id="panelsStayOpen-headingSeventeen">
+        <button
+          class="accordion-button collapsed"
+          style="background-color: rgba(255, 252, 83, 0.979)"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#panelsStayOpen-collapseSeventeen"
+          aria-expanded="false"
+          aria-controls="panelsStayOpen-collapseSeventeen"
+        >
+          IT
+        </button>
+      </h2>
+      <div
+        id="panelsStayOpen-collapseSeventeen"
+        class="accordion-collapse collapse"
+        aria-labelledby="panelsStayOpen-headingSeventeen"
+      >
+        <div class="accordion-body" style="background-color: rgba(255, 254, 182, 0.979)">
+          <li>
+            Ensure computer labs and other rooms with essential technology maintain a temperature of 85 degrees
+            Fahrenheit. Temperatures above this threshold can lead to a reduction in equipment life expectancy of up to
+            40%.
+          </li>
+        </div>
+      </div>
+    </div>
+  </div>
+  {% endblock %}
+</div>
